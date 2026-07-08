@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- Hero image slideshow ----------
-  var slides = document.querySelectorAll('.hero-img .slide');
+  var slides = document.querySelectorAll('.hero-full-media .slide');
   if (slides.length > 1) {
-    var dotsWrap = document.querySelector('.hero-img .slide-dots');
+    var dotsWrap = document.querySelector('.hero-full .slide-dots');
     var dots = [];
     if (dotsWrap) {
       slides.forEach(function (_, i) {
@@ -56,9 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!reduceMotion && 'IntersectionObserver' in window) {
     var groupSelector =
       '.section-head, .feature, .team-grid, .awards-grid, .badges, .brand-grid, ' +
-      '.brand-gallery, .promise, .testimonials, .contact-wrap, .diagonal .content, .cta-band, .service-detail';
+      '.brand-gallery, .promise, .testimonials, .contact-wrap, .diagonal .content, .cta-band, .service-detail, ' +
+      '.stack-media, .stack-text, .why-row, .banner-duo, .appointment-grid, ' +
+      '.leader-block, .intro-trio, .staff-grid, .doctor-facts';
     var groups = document.querySelectorAll(groupSelector);
-    var multiChildGroups = '.team-grid, .awards-grid, .badges, .brand-grid, .brand-gallery';
+    var multiChildGroups = '.team-grid, .awards-grid, .badges, .brand-grid, .brand-gallery, .why-row, .banner-duo, .appointment-grid, .intro-trio, .staff-grid';
     var targets = [];
 
     groups.forEach(function (group) {
