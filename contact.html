@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Eyeglass Gallery Burlington</title>
-<meta name="description" content="Contact Eyeglass Gallery at 1250 Brant Street, Burlington, ON. Call 905.331.5999 or book your eye exam online.">
+<title>Contact, Eyeglass Gallery</title>
+<meta name="description" content="Contact Eyeglass Gallery in Burlington. Call 905.331.5999 or book your eye exam online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,25 +12,21 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <div>1250 Brant Street, Burlington, ON &nbsp;·&nbsp; Mon–Fri 10–7 · Sat 10–5</div>
-    <div><a href="tel:+19053315999">905.331.5999</a><span class="sep">·</span><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a></div>
-  </div>
-</div>
-<header class="main">
-  <div class="wrap">
+<nav class="menu">
+  <a href="index.html">Home</a>
+  <a href="brands.html">Eyewear Brands</a>
+  <a href="optometrist.html">Optometrist</a>
+  <a href="eyecare.html">Eye Care</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="menu-foot"><a href="tel:+19053315999">905.331.5999</a><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a><a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book an Eye Exam</a></div>
+</nav>
+<header>
+  <div class="wrap nav">
     <a href="index.html" class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></a>
-    <nav class="primary">
-      <a href="brands.html">Eyewear Brands</a>
-      <a href="optometrist.html">Optometrist</a>
-      <a href="eyecare.html">Eye Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
     <div class="nav-right">
-      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red" style="padding:12px 20px">Book an Eye Exam</a>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('.primary').classList.toggle('open')"><span></span><span></span><span></span></button>
+      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark" style="padding:14px 24px">Book an Eye Exam</a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -38,78 +34,57 @@
 <section class="page-hero">
   <div class="wrap">
     <div class="crumb">Home · Contact</div>
-    <span class="eyebrow">We'd love to see you</span>
-    <h1>Get in Touch</h1>
-    <p>Questions, prescriptions, or ready to book? Reach us by phone, email or drop by the store — we're happy to help.</p>
+    <h1 data-reveal>Get in Touch</h1>
+    <p data-reveal class="d1">Questions, prescriptions, or ready to book? Reach us by phone, email or drop by the store, we're happy to help.</p>
   </div>
 </section>
 
 <section class="pad">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div>
-        <span class="eyebrow" style="display:block;margin-bottom:8px">Store details</span>
-        <ul class="contact-list">
-          <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><h4>Address</h4><a href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">1250 Brant Street, Burlington, ON L7P 1X8</a></div></li>
-          <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg><div><h4>Phone</h4><a href="tel:+19053315999">905.331.5999</a></div></li>
-          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><h4>Email</h4><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a></div></li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h4>Hours</h4><p>Mon–Fri: 10–7 · Sat: 10–5 · Sun: Closed</p></div></li>
-          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><h4>Accessibility</h4><p>Our retail store and eye exam room are wheelchair accessible.</p></div></li>
-        </ul>
-        <div class="map-embed">
-          <iframe title="Eyeglass Gallery location" loading="lazy" src="https://www.google.com/maps?q=1250+Brant+Street+Burlington+ON&output=embed"></iframe>
-        </div>
-      </div>
-      <div>
-        <div class="contact-form">
-          <span class="eyebrow" style="display:block;margin-bottom:8px">Send a message</span>
-          <form onsubmit="event.preventDefault();this.reset();alert('Thanks! We\'ll be in touch soon.')">
-            <label>Full name</label>
-            <input type="text" placeholder="Your name" required>
-            <label>Email</label>
-            <input type="email" placeholder="you@email.com" required>
-            <label>Phone</label>
-            <input type="tel" placeholder="Optional">
-            <label>How can we help?</label>
-            <textarea placeholder="Tell us a little about what you need…" required></textarea>
-            <button type="submit" class="btn btn-red">Send Message <span class="arw">→</span></button>
-          </form>
-        </div>
-        <div class="book" style="margin-top:22px;text-align:center;padding:34px 28px">
-          <h2 style="font-size:24px">Prefer to book online?</h2>
-          <p style="margin:10px auto 20px">Reserve your eye exam anytime through our booking system.</p>
-          <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red">Book an Appointment <span class="arw">→</span></a>
-        </div>
+  <div class="wrap contact-grid">
+    <div data-reveal>
+      <span class="eyebrow" style="display:block;margin-bottom:10px">Store details</span>
+      <ul class="contact-list">
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><h4>Address</h4><a href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">1234 Elm Street, Burlington, ON</a></div></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg><div><h4>Phone</h4><a href="tel:+19053315999">905.331.5999</a></div></li>
+        <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><h4>Email</h4><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a></div></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h4>Hours</h4><p>Mon – Fri: 10–7 · Sat: 10–5 · Sun: Closed</p></div></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><div><h4>Accessibility</h4><p>Our retail store and eye exam room are wheelchair accessible.</p></div></li>
+      </ul>
+      <div class="map-embed"><iframe title="Eyeglass Gallery location" loading="lazy" src="https://www.google.com/maps?q=Eyeglass+Gallery+Burlington+ON&output=embed"></iframe></div>
+    </div>
+    <div data-reveal class="d1">
+      <div class="contact-form">
+        <span class="eyebrow" style="display:block;margin-bottom:8px">Send a message</span>
+        <form data-fake data-msg="Thanks! We'll be in touch soon.">
+          <label>Full name</label><input type="text" placeholder="Your name" required>
+          <label>Email</label><input type="email" placeholder="you@email.com" required>
+          <label>Phone</label><input type="tel" placeholder="Optional">
+          <label>How can we help?</label><textarea placeholder="Tell us a little about what you need…" required></textarea>
+          <button type="submit" class="btn btn-dark">Send Message <span class="arw">→</span></button>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
+<section class="book-band">
+  <span class="eyebrow" data-reveal>Prefer to book online?</span>
+  <h2 data-reveal class="d1">Reserve your exam anytime</h2>
+  <p data-reveal class="d2">Book a comprehensive eye exam or styling consultation through our online booking system.</p>
+  <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn d3" data-reveal>Book an Appointment <span class="arw">→</span></a>
+</section>
+
 <footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></div>
-        <p>Burlington's trusted optical boutique. Winner of the Burlington Post Readers' Choice Gold Award for Best Optical Store.</p>
-        <div class="foot-social">
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="https://www.facebook.com/Eyeglass-Gallery-963481793702664" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8.5c0-.3.2-.5.5-.5z"/></svg></a>
-        </div>
-      </div>
-      <div><h4>Explore</h4><a href="brands.html">Eyewear Brands</a><a href="optometrist.html">Optometrist</a><a href="eyecare.html">Eye Care</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
-      <div><h4>Visit Us</h4><a href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">1250 Brant Street<br>Burlington, ON L7P 1X8</a><p style="margin-top:10px">Mon–Fri: 10–7<br>Sat: 10–5 · Sun: Closed</p></div>
-      <div><h4>Get in touch</h4><a href="tel:+19053315999">905.331.5999</a><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a><a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red" style="margin-top:14px;padding:11px 20px">Book Online</a></div>
-    </div>
-    <div class="foot-bottom">
-      <div>© 2026 Eyeglass Gallery · Burlington, ON · Wheelchair accessible</div>
-      <div><a href="contact.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Terms &amp; Conditions</a></div>
-    </div>
+  <div class="wrap foot">
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg><a class="big" href="tel:+19053315999">905.331.5999</a><div class="sm">Call Us</div></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="big" style="font-size:13px">1234 Elm Street</div><div class="sm">Burlington, ON</div><a class="lnk" href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">Directions</a></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="sm" style="font-weight:700;color:var(--ink)">Mon – Fri: 10–7<br>Sat: 10–5 | Sun: Closed</div><div class="sm">Hours</div></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><div class="big" style="font-size:13px">Book Your Exam<br>Online</div><a class="lnk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book Now</a></div>
   </div>
 </footer>
-
-<div class="sticky-bar">
+<div class="sticky">
   <a class="call" href="tel:+19053315999"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg>Call Us</a>
-  <a class="bk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book an Exam</a>
+  <a class="book" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book an Eye Exam</a>
 </div>
 <script src="script.js"></script>
 </body>

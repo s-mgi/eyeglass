@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eyewear Brands — Eyeglass Gallery Burlington</title>
-<meta name="description" content="Designer eyewear brands at Eyeglass Gallery: Dior, Gucci, Tom Ford, Ray-Ban, Prada, Versace, Oakley, Maui Jim and more.">
+<title>Eyewear Brands, Eyeglass Gallery</title>
+<meta name="description" content="Designer eyewear brands at Eyeglass Gallery, Tom Ford, Ray-Ban, Gucci, Prada, Oakley, Maui Jim and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,25 +12,21 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <div>1250 Brant Street, Burlington, ON &nbsp;·&nbsp; Mon–Fri 10–7 · Sat 10–5</div>
-    <div><a href="tel:+19053315999">905.331.5999</a><span class="sep">·</span><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a></div>
-  </div>
-</div>
-<header class="main">
-  <div class="wrap">
+<nav class="menu">
+  <a href="index.html">Home</a>
+  <a href="brands.html">Eyewear Brands</a>
+  <a href="optometrist.html">Optometrist</a>
+  <a href="eyecare.html">Eye Care</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="menu-foot"><a href="tel:+19053315999">905.331.5999</a><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a><a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book an Eye Exam</a></div>
+</nav>
+<header>
+  <div class="wrap nav">
     <a href="index.html" class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></a>
-    <nav class="primary">
-      <a href="brands.html" class="active">Eyewear Brands</a>
-      <a href="optometrist.html">Optometrist</a>
-      <a href="eyecare.html">Eye Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
     <div class="nav-right">
-      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red" style="padding:12px 20px">Book an Eye Exam</a>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('.primary').classList.toggle('open')"><span></span><span></span><span></span></button>
+      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark" style="padding:14px 24px">Book an Eye Exam</a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -38,102 +34,69 @@
 <section class="page-hero">
   <div class="wrap">
     <div class="crumb">Home · Eyewear Brands</div>
-    <span class="eyebrow">The names you love</span>
-    <h1>Designer Eyewear Brands</h1>
-    <p>From timeless classics to bold statement frames, we carry an extensive selection of designer eyewear and sunglasses — with expert stylists to help you find your perfect pair.</p>
+    <h1 data-reveal>Designer Eyewear Brands</h1>
+    <p data-reveal class="d1">From timeless classics to bold statement frames, we carry an extensive selection of designer eyewear and sunglasses, with expert stylists to help you find your perfect pair.</p>
   </div>
 </section>
 
 <section class="pad">
   <div class="wrap">
-    <div class="sec-head center-head"><span class="eyebrow">Now in store</span><h2>Our Eyewear Brands</h2></div>
+    <div class="sec-title" data-reveal>Our Eyewear Brands</div>
     <div class="brand-grid">
-      <div class="brand-tile"><img src="assets/brand-1.png" alt="Dior"></div>
-      <div class="brand-tile"><img src="assets/brand-2.png" alt="Marc Jacobs"></div>
-      <div class="brand-tile"><img src="assets/brand-3.png" alt="Gucci"></div>
-      <div class="brand-tile"><img src="assets/brand-4.png" alt="Kate Spade"></div>
-      <div class="brand-tile"><img src="assets/brand-5.png" alt="David Beckham"></div>
-      <div class="brand-tile"><img src="assets/brand-6.png" alt="Carolina Herrera"></div>
-      <div class="brand-tile"><img src="assets/brand-7.png" alt="Etnia Barcelona"></div>
-      <div class="brand-tile"><img src="assets/brand-8.png" alt="Matttew"></div>
-      <div class="brand-tile txt">Tom Ford</div>
-      <div class="brand-tile txt">Ray-Ban</div>
-      <div class="brand-tile txt">Prada</div>
-      <div class="brand-tile txt">Versace</div>
-      <div class="brand-tile txt">Oakley</div>
-      <div class="brand-tile txt">Maui Jim</div>
-      <div class="brand-tile txt">Tiffany &amp; Co.</div>
-      <div class="brand-tile txt">Michael Kors</div>
-      <div class="brand-tile txt">Burberry</div>
-      <div class="brand-tile txt">Hugo Boss</div>
-      <div class="brand-tile txt">Coach</div>
-      <div class="brand-tile txt">Polo Ralph Lauren</div>
+      <div class="brand-tile" data-reveal><img src="assets/brand-1.png" alt="Dior"></div>
+      <div class="brand-tile d1" data-reveal><img src="assets/brand-2.png" alt="Marc Jacobs"></div>
+      <div class="brand-tile d2" data-reveal><img src="assets/brand-3.png" alt="Gucci"></div>
+      <div class="brand-tile d3" data-reveal><img src="assets/brand-4.png" alt="Kate Spade"></div>
+      <div class="brand-tile" data-reveal><img src="assets/brand-5.png" alt="David Beckham"></div>
+      <div class="brand-tile d1" data-reveal><img src="assets/brand-6.png" alt="Carolina Herrera"></div>
+      <div class="brand-tile d2" data-reveal><img src="assets/brand-7.png" alt="Etnia Barcelona"></div>
+      <div class="brand-tile d3" data-reveal><img src="assets/brand-8.png" alt="Matttew"></div>
+      <div class="brand-tile txt" data-reveal>Tom Ford</div>
+      <div class="brand-tile txt d1" data-reveal>Ray-Ban</div>
+      <div class="brand-tile txt d2" data-reveal>Persol</div>
+      <div class="brand-tile txt d3" data-reveal>Oliver Peoples</div>
+      <div class="brand-tile txt" data-reveal>Prada</div>
+      <div class="brand-tile txt d1" data-reveal>Versace</div>
+      <div class="brand-tile txt d2" data-reveal>Oakley</div>
+      <div class="brand-tile txt d3" data-reveal>Maui Jim</div>
+      <div class="brand-tile txt" data-reveal>Tiffany &amp; Co.</div>
+      <div class="brand-tile txt d1" data-reveal>Michael Kors</div>
+      <div class="brand-tile txt d2" data-reveal>Burberry</div>
+      <div class="brand-tile txt d3" data-reveal>Lindberg</div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED PRODUCTS -->
 <section class="pad" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Just landed</span><h2>Featured Frames</h2></div></div>
-    <div class="products">
-      <div class="card"><div class="card-img"><span class="tag new">New</span><img src="assets/photo10.jpg" alt="Blue-light optical frames"></div><div class="card-body"><h3>Condor</h3><div class="sub">Blue-light optical</div><div class="price">$320.00</div></div></div>
-      <div class="card"><div class="card-img"><span class="tag new">New</span><img src="assets/photo2.jpg" alt="Acetate optical frames"></div><div class="card-body"><h3>Solaris</h3><div class="sub">Acetate optical</div><div class="price">$250.00</div></div></div>
-      <div class="card"><div class="card-img"><span class="tag">Limited</span><img src="assets/photo17.jpg" alt="Statement sunglasses"></div><div class="card-body"><h3>Odyssey</h3><div class="sub">Statement sunglasses</div><div class="price">$300.00</div></div></div>
-      <div class="card"><div class="card-img"><span class="tag new">New</span><img src="assets/photo19.jpg" alt="Titanium premium frames"></div><div class="card-body"><h3>Lumen</h3><div class="sub">Titanium premium</div><div class="price">$220.00</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- INSIDE THE GALLERY -->
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Browse in store</span><h2>Inside the Gallery</h2></div><a class="lnk" href="contact.html">Visit Us</a></div>
+    <div class="sec-head" data-reveal><h2>Inside the Gallery</h2><a href="contact.html">Visit Us</a></div>
     <div class="collections">
-      <a class="col-card" href="brands.html"><img src="assets/photo12.jpg" alt="Designer optical frames"><div class="lbl"><h3>Designer<br>Optical</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
-      <a class="col-card" href="brands.html"><img src="assets/photo17.jpg" alt="Sunglasses selection"><div class="lbl"><h3>Sunglasses<br>Wall</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
-      <a class="col-card" href="brands.html"><img src="assets/photo19.jpg" alt="Premium frames"><div class="lbl"><h3>Premium<br>Frames</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
-      <a class="col-card" href="brands.html"><img src="assets/photo21.jpg" alt="The frame wall"><div class="lbl"><h3>The Frame<br>Wall</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card" href="contact.html" data-reveal><img src="assets/m-card1.jpg" alt="Women's eyewear"><div class="lbl"><h3>Women's Eyewear</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card d1" href="contact.html" data-reveal><img src="assets/m-card2.jpg" alt="Men's eyewear"><div class="lbl"><h3>Men's Eyewear</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card d2" href="contact.html" data-reveal><img src="assets/m-card3.jpg" alt="Sunglasses"><div class="lbl"><h3>Sunglasses Collection</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card d3" href="contact.html" data-reveal><img src="assets/m-card4.jpg" alt="Premium lenses"><div class="lbl"><h3>Premium Lenses</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
     </div>
   </div>
 </section>
 
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="book">
-      <span class="eyebrow">2-for-1 &amp; direct billing</span>
-      <h2>Find your perfect frames</h2>
-      <p>Our onsite frame stylists are ready to help you and your family choose eyewear that fits your face, your prescription and your style. Book a styling visit or eye exam today.</p>
-      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red">Book an Appointment <span class="arw">→</span></a>
-    </div>
-  </div>
+<section class="book-band">
+  <span class="eyebrow" data-reveal>2-for-1 &amp; direct billing</span>
+  <h2 data-reveal class="d1">Find your perfect frames</h2>
+  <p data-reveal class="d2">Our onsite frame stylists are ready to help you and your family choose eyewear that fits your face, prescription and style.</p>
+  <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn d3" data-reveal>Book an Appointment <span class="arw">→</span></a>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></div>
-        <p>Burlington's trusted optical boutique. Winner of the Burlington Post Readers' Choice Gold Award for Best Optical Store.</p>
-        <div class="foot-social">
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="https://www.facebook.com/Eyeglass-Gallery-963481793702664" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8.5c0-.3.2-.5.5-.5z"/></svg></a>
-        </div>
-      </div>
-      <div><h4>Explore</h4><a href="brands.html">Eyewear Brands</a><a href="optometrist.html">Optometrist</a><a href="eyecare.html">Eye Care</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
-      <div><h4>Visit Us</h4><a href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">1250 Brant Street<br>Burlington, ON L7P 1X8</a><p style="margin-top:10px">Mon–Fri: 10–7<br>Sat: 10–5 · Sun: Closed</p></div>
-      <div><h4>Get in touch</h4><a href="tel:+19053315999">905.331.5999</a><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a><a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red" style="margin-top:14px;padding:11px 20px">Book Online</a></div>
-    </div>
-    <div class="foot-bottom">
-      <div>© 2026 Eyeglass Gallery · Burlington, ON · Wheelchair accessible</div>
-      <div><a href="contact.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Terms &amp; Conditions</a></div>
-    </div>
+  <div class="wrap foot">
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg><a class="big" href="tel:+19053315999">905.331.5999</a><div class="sm">Call Us</div></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="big" style="font-size:13px">1234 Elm Street</div><div class="sm">Burlington, ON</div><a class="lnk" href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">Directions</a></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="sm" style="font-weight:700;color:var(--ink)">Mon – Fri: 10–7<br>Sat: 10–5 | Sun: Closed</div><div class="sm">Hours</div></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><div class="big" style="font-size:13px">Book Your Exam<br>Online</div><a class="lnk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book Now</a></div>
   </div>
 </footer>
-
-<div class="sticky-bar">
+<div class="sticky">
   <a class="call" href="tel:+19053315999"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg>Call Us</a>
-  <a class="bk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book an Exam</a>
+  <a class="book" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book an Eye Exam</a>
 </div>
 <script src="script.js"></script>
 </body>

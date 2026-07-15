@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eyeglass Gallery — Designer Eyewear & Eye Care in Burlington</title>
-<meta name="description" content="Burlington's Readers' Choice Gold Award optical store. Designer eyewear, comprehensive eye exams, and specialty eyecare from a team that treats you like family.">
+<title>Eyeglass Gallery, Premium Eyewear & Personalized Eye Care</title>
+<meta name="description" content="Curated. Refined. Uniquely you. Premium eyewear and personalized eye care.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,245 +12,189 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <div>1250 Brant Street, Burlington, ON &nbsp;·&nbsp; Mon–Fri 10–7 · Sat 10–5</div>
-    <div><a href="tel:+19053315999">905.331.5999</a><span class="sep">·</span><a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a></div>
+<!-- MENU OVERLAY -->
+<nav class="menu">
+  <a href="index.html">Home</a>
+  <a href="brands.html">Eyewear Brands</a>
+  <a href="optometrist.html">Optometrist</a>
+  <a href="eyecare.html">Eye Care</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <div class="menu-foot">
+    <a href="tel:+19053315999">905.331.5999</a>
+    <a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a>
+    <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book an Eye Exam</a>
   </div>
-</div>
+</nav>
 
-<header class="main">
-  <div class="wrap">
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
     <a href="index.html" class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></a>
-    <nav class="primary">
-      <a href="brands.html">Eyewear Brands</a>
-      <a href="optometrist.html">Optometrist</a>
-      <a href="eyecare.html">Eye Care</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
     <div class="nav-right">
-      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red" style="padding:12px 20px">Book an Eye Exam</a>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('.primary').classList.toggle('open')"><span></span><span></span><span></span></button>
+      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark" style="padding:14px 24px">Book an Eye Exam</a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">Curated. Refined. Uniquely you.</span>
-    <h1>See Better.<br><span class="rd">Look Exceptional.</span></h1>
-    <p>Burlington's award-winning optical boutique — designer eyewear paired with comprehensive eye care from a team that treats every patient like family.</p>
-    <div class="hero-cta">
-      <a href="brands.html" class="btn btn-dark">Explore Eyewear <span class="arw">→</span></a>
-      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-ghost">Book an Eye Exam</a>
-    </div>
+  <div class="hero-slider">
+    <img class="slide on" src="assets/hero-1.jpg" alt="Model wearing premium eyewear">
+    <img class="slide" src="assets/hero-2.jpg" alt="Model wearing designer eyewear">
+    <img class="slide" src="assets/hero-3.jpg" alt="Model wearing optical frames">
   </div>
-  <div class="hero-img">
-    <img src="assets/photo8.jpg" alt="Person wearing designer eyewear">
-    <span class="hero-tag">Readers' Choice Gold 2024</span>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow" data-reveal>Curated. Refined. Uniquely you.</span>
+      <h1 data-reveal class="d1">See Better.<br>Look Exceptional.</h1>
+      <p data-reveal class="d2">Premium eyewear and personalized eye care.</p>
+      <div class="hero-cta d3" data-reveal>
+        <a href="#collections" class="btn btn-dark">Explore Collections <span class="arw">→</span></a>
+        <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-ghost">Book an Eye Exam</a>
+      </div>
+      <div class="dots"><i class="on"></i><i></i><i></i></div>
+    </div>
   </div>
 </section>
 
 <!-- BADGES -->
 <section class="badges">
-  <div class="badge"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><span>Comprehensive<br>Eye Exams</span></div>
-  <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg><span>Direct Insurance<br>Billing</span></div>
-  <div class="badge"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1-3.5 4-3.5"/></svg><span>Family Owned<br>&amp; Operated</span></div>
-  <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3.2"/></svg><span>Advanced<br>Technology</span></div>
+  <div class="badge" data-reveal><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><span>Comprehensive<br>Eye Exams</span></div>
+  <div class="badge d1" data-reveal><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg><span>Direct Insurance<br>Billing</span></div>
+  <div class="badge d2" data-reveal><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1-3.5 4-3.5"/></svg><span>Family Owned<br>Since 30+ Years</span></div>
+  <div class="badge d3" data-reveal><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.4"/></svg><span>Advanced<br>Technology</span></div>
 </section>
 
-<!-- BRANDS MARQUEE -->
-<section class="brands-band">
+<!-- BRANDS -->
+<section class="brands">
   <span class="eyebrow">Featured Designer Brands</span>
-  <div class="marquee-wrap">
+  <div class="marquee-wrap" data-reveal>
     <div class="marquee">
-      <img src="assets/brand-1.png" alt="Dior"><img src="assets/brand-2.png" alt="Marc Jacobs"><img src="assets/brand-3.png" alt="Gucci"><img src="assets/brand-4.png" alt="Kate Spade"><img src="assets/brand-5.png" alt="David Beckham"><img src="assets/brand-6.png" alt="Carolina Herrera"><img src="assets/brand-7.png" alt="Etnia Barcelona"><img src="assets/brand-8.png" alt="Matttew">
-      <img src="assets/brand-1.png" alt="Dior"><img src="assets/brand-2.png" alt="Marc Jacobs"><img src="assets/brand-3.png" alt="Gucci"><img src="assets/brand-4.png" alt="Kate Spade"><img src="assets/brand-5.png" alt="David Beckham"><img src="assets/brand-6.png" alt="Carolina Herrera"><img src="assets/brand-7.png" alt="Etnia Barcelona"><img src="assets/brand-8.png" alt="Matttew">
+      <a href="brands.html"><img src="assets/brand-1.png" alt="Dior"></a>
+      <a href="brands.html"><img src="assets/brand-2.png" alt="Marc Jacobs"></a>
+      <a href="brands.html"><img src="assets/brand-3.png" alt="Gucci"></a>
+      <a href="brands.html"><img src="assets/brand-4.png" alt="Kate Spade"></a>
+      <a href="brands.html"><img src="assets/brand-5.png" alt="David Beckham"></a>
+      <a href="brands.html"><img src="assets/brand-6.png" alt="Carolina Herrera"></a>
+      <a href="brands.html"><img src="assets/brand-7.png" alt="Etnia Barcelona"></a>
+      <a href="brands.html"><img src="assets/brand-8.png" alt="Matttew"></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-1.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-2.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-3.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-4.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-5.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-6.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-7.png" alt=""></a>
+      <a href="brands.html" aria-hidden="true"><img src="assets/brand-8.png" alt=""></a>
     </div>
-  </div>
-</section>
-
-<!-- NEW ARRIVALS -->
-<section class="pad">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow">Just landed</span><h2>New Arrivals</h2></div>
-      <a class="lnk" href="brands.html">View All</a>
-    </div>
-    <div class="products">
-      <div class="card"><div class="card-img"><span class="tag new">New</span><img src="assets/photo10.jpg" alt="Blue-light optical frames"></div><div class="card-body"><h3>Condor</h3><div class="sub">Blue-light optical</div><div class="price">$320.00</div></div></div>
-      <div class="card"><div class="card-img"><span class="tag new">New</span><img src="assets/photo2.jpg" alt="Acetate optical frames"></div><div class="card-body"><h3>Solaris</h3><div class="sub">Acetate optical</div><div class="price">$250.00</div></div></div>
-      <div class="card"><div class="card-img"><span class="tag">Limited</span><img src="assets/photo17.jpg" alt="Statement sunglasses"></div><div class="card-body"><h3>Odyssey</h3><div class="sub">Statement sunglasses</div><div class="price">$300.00</div></div></div>
-      <div class="card"><div class="card-img"><span class="tag new">New</span><img src="assets/photo19.jpg" alt="Titanium premium frames"></div><div class="card-body"><h3>Lumen</h3><div class="sub">Titanium premium</div><div class="price">$220.00</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- EDITORIAL -->
-<section class="editorial">
-  <div class="ed-img"><img src="assets/photo12.jpg" alt="Bright, colorful summer eyewear frames"></div>
-  <div class="ed-copy">
-    <span class="eyebrow">Featured Collection</span>
-    <h2>The Summer<br>Collection</h2>
-    <p>Bright, lightweight frames built for warm days — bold enough to make a statement, refined enough to wear anywhere. A limited seasonal edit of our most-loved silhouettes.</p>
-    <a href="brands.html" class="btn btn-red">Shop the Edit <span class="arw">→</span></a>
   </div>
 </section>
 
 <!-- COLLECTIONS -->
-<section class="pad">
+<section class="pad" id="collections">
   <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow">Explore</span><h2>Our Collections</h2></div>
-      <a class="lnk" href="brands.html">View All</a>
+    <div class="sec-head" data-reveal>
+      <h2>Explore Our Collections</h2>
+      <a href="brands.html">View All</a>
     </div>
     <div class="collections">
-      <a class="col-card" href="brands.html"><img src="assets/photo2.jpg" alt="Optical frames"><div class="lbl"><h3>Optical<br>Frames</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
-      <a class="col-card" href="brands.html"><img src="assets/photo17.jpg" alt="Sunglasses"><div class="lbl"><h3>Sunglasses<br>Collection</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
-      <a class="col-card" href="brands.html"><img src="assets/photo19.jpg" alt="Premium and titanium frames"><div class="lbl"><h3>Premium &amp;<br>Titanium</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
-      <a class="col-card" href="eyecare.html"><img src="assets/photo20.jpg" alt="Kids eyewear"><div class="lbl"><h3>Kids'<br>Eyewear</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card" href="brands.html" data-reveal><img src="assets/m-card1.jpg" alt="Women's eyewear"><div class="lbl"><h3>Women's Eyewear</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card d1" href="brands.html" data-reveal><img src="assets/m-card2.jpg" alt="Men's eyewear"><div class="lbl"><h3>Men's Eyewear</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card d2" href="brands.html" data-reveal><img src="assets/m-card3.jpg" alt="Sunglasses collection"><div class="lbl"><h3>Sunglasses Collection</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
+      <a class="col-card d3" href="brands.html" data-reveal><img src="assets/m-card4.jpg" alt="Premium lens collection"><div class="lbl"><h3>Premium Lens Collection</h3><div class="circle"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div></a>
     </div>
   </div>
 </section>
 
 <!-- EXAM FEATURE -->
+<section class="exam" id="book">
+  <div class="exam-img"><img src="assets/photo5.jpg" alt="Patient during a comprehensive eye exam"></div>
+  <div class="exam-copy">
+    <span class="eyebrow" data-reveal>Eye Exams</span>
+    <h3 class="serif" data-reveal>Your Vision<br>Our Priority</h3>
+    <p data-reveal class="d1">Comprehensive eye exams using advanced technology to ensure your eyes stay healthy.</p>
+    <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark d2" data-reveal>Book Your Exam <span class="arw">→</span></a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="pad">
+  <div class="wrap">
+    <div class="sec-title" data-reveal>Why Choose Eyeglass Gallery</div>
+    <div class="why">
+      <div class="col" data-reveal><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg><h4>Expert Care</h4><p>Experienced optometrists focused on you.</p></div>
+      <div class="col d1" data-reveal><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><h4>Advanced Technology</h4><p>The latest tools for precise, comfortable care.</p></div>
+      <div class="col d2" data-reveal><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg><h4>Personalized Service</h4><p>Tailored to your lifestyle and vision needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LENS TECH -->
 <section class="pad" style="padding-top:0">
   <div class="wrap">
-    <div class="feature">
-      <div class="feat-img"><img src="assets/photo13.jpg" alt="Eye exam equipment"></div>
-      <div class="feat-copy">
-        <span class="eyebrow">Eye Exams</span>
-        <h2>Your Vision,<br>Our Priority</h2>
-        <p>Comprehensive eye exams using the latest diagnostic technology, delivered by experienced optometrists who take the time to understand your eyes — and your lifestyle.</p>
-        <a href="eyecare.html" class="btn btn-dark">Learn About Eye Care <span class="arw">→</span></a>
+    <div class="lens" data-reveal>
+      <div class="lens-head"><h3>Lens Technology</h3><a href="eyecare.html">View All Lenses</a></div>
+      <div class="lens-item">
+        <button class="lens-row" onclick="toggleLens(this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Blue Light Protection</span><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="lens-a"><p>Filters high-energy blue light from screens to reduce digital eye strain and support healthier sleep.</p></div>
+      </div>
+      <div class="lens-item">
+        <button class="lens-row" onclick="toggleLens(this)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Progressive Lenses</span><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="lens-a"><p>Seamless multi-focal lenses that transition smoothly from distance to reading, no visible line.</p></div>
+      </div>
+      <div class="lens-item">
+        <button class="lens-row" onclick="toggleLens(this)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><span>Photochromic Lenses</span><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="lens-a"><p>Lenses that darken automatically in sunlight and clear indoors, UV protection all day.</p></div>
+      </div>
+      <div class="lens-item">
+        <button class="lens-row" onclick="toggleLens(this)"><svg viewBox="0 0 24 24"><path d="M3 8c3 2 6 2 9 0s6-2 9 0M3 14c3 2 6 2 9 0s6-2 9 0"/></svg><span>Polarized Lenses</span><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="lens-a"><p>Cut glare from water, roads and snow for sharper, more comfortable vision outdoors.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- TESTIMONIAL + IG -->
 <section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head center-head"><span class="eyebrow">What we offer</span><h2>Care beyond the counter</h2></div>
-    <div class="services">
-      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Direct Insurance Billing</h3><p>We bill most major vision plans directly, so you pay less out of pocket and skip the paperwork.</p></div>
-      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/></svg></div><h3>Specialty Eyecare</h3><p>Dry eye, digital strain, glaucoma and cataract management — tailored to your specific needs.</p></div>
-      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M16 4l2 2 4-4"/></svg></div><h3>Onsite Frame Stylists</h3><p>Experienced stylists help you and your kids find frames that fit your face and your life.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES (image cards) -->
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><span class="eyebrow">Book a meeting now</span><h2>Our Services</h2></div>
-      <a class="lnk" href="eyecare.html#services">View All</a>
-    </div>
-    <div class="svc-cards">
-      <div class="svc-card">
-        <div class="sc-img"><img src="assets/photo5.jpg" alt="Comprehensive eye exam"></div>
-        <div class="sc-body"><h3>Comprehensive Eye Exams</h3><p>Thorough, unhurried exams with advanced diagnostics — for adults and children alike.</p><a class="sc-link" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book an Exam <span class="arw">→</span></a></div>
+  <div class="wrap social">
+    <div data-reveal>
+      <div class="col-title">What Our Clients Say</div>
+      <div class="quote">
+        <span class="mark">&ldquo;</span>
+        <div class="stars">★★★★★</div>
+        <p>The team at Eyeglass Gallery is incredible! The attention to detail and personalized service is unmatched.</p>
+        <cite>Parviz K.</cite>
+        <div class="qdots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
       </div>
-      <div class="svc-card">
-        <div class="sc-img"><img src="assets/photo18.jpg" alt="Book your exam online"></div>
-        <div class="sc-body"><h3>Book Your Exam Online</h3><p>Reserve your appointment in a few clicks, any time — we'll confirm by email.</p><a class="sc-link" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book Online <span class="arw">→</span></a></div>
-      </div>
-      <div class="svc-card">
-        <div class="sc-img"><img src="assets/photo15.jpg" alt="Specialty eyecare technology"></div>
-        <div class="sc-body"><h3>Specialty Eyecare</h3><p>Dry eye, digital strain, glaucoma and cataract management using on-site technology.</p><a class="sc-link" href="eyecare.html">Learn More <span class="arw">→</span></a></div>
+    </div>
+    <div data-reveal class="d1">
+      <div class="col-title">Follow @eyeglassgallery</div>
+      <div class="ig">
+        <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/m-ig1.jpg" alt=""></a>
+        <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/m-ig2.jpg" alt=""></a>
+        <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/m-ig3.jpg" alt=""></a>
+        <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/m-ig4.jpg" alt=""></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL -->
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="social">
-      <div>
-        <span class="eyebrow" style="display:block;margin-bottom:22px">What our clients say</span>
-        <div class="quote-card">
-          <div class="stars">★★★★★</div>
-          <blockquote>"One might ask why I would go 20 kilometres out of my way to buy my eyeglasses. Simple — because this place is constantly professional, friendly, and they stand by their product. One of the best customer service experiences you can get."</blockquote>
-          <cite>— Claudia P., Mississauga</cite>
-        </div>
-      </div>
-      <div>
-        <span class="eyebrow" style="display:block;margin-bottom:22px">Follow @eyeglass_gallery</span>
-        <div class="ig-grid">
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/photo1.jpg" alt=""></a>
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/photo11.jpg" alt=""></a>
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/photo17.jpg" alt=""></a>
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/photo8.jpg" alt=""></a>
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/photo12.jpg" alt=""></a>
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener"><img src="assets/photo4.jpg" alt=""></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="news">
-      <div>
-        <h2>Stay in the loop</h2>
-        <p>Join our list for early access to new arrivals, seasonal collections and members-only offers.</p>
-      </div>
-      <form class="news-form" onsubmit="event.preventDefault();this.reset();alert('You\'re subscribed — welcome!')">
-        <input type="email" placeholder="Email address" required>
-        <button type="submit" class="btn">Subscribe <span class="arw">→</span></button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!--#FOOTER-->
+<!-- FOOTER -->
 <footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></div>
-        <p>Burlington's trusted optical boutique. Winner of the Burlington Post Readers' Choice Gold Award for Best Optical Store.</p>
-        <div class="foot-social">
-          <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="https://www.facebook.com/Eyeglass-Gallery-963481793702664" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h2V5h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8.5c0-.3.2-.5.5-.5z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="brands.html">Eyewear Brands</a>
-        <a href="optometrist.html">Optometrist</a>
-        <a href="eyecare.html">Eye Care</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Visit Us</h4>
-        <a href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">1250 Brant Street<br>Burlington, ON L7P 1X8</a>
-        <p style="margin-top:10px">Mon–Fri: 10–7<br>Sat: 10–5 · Sun: Closed</p>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <a href="tel:+19053315999">905.331.5999</a>
-        <a href="mailto:info@eyeglassgallery.ca">info@eyeglassgallery.ca</a>
-        <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-red" style="margin-top:14px;padding:11px 20px">Book Online</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div>© 2026 Eyeglass Gallery · Burlington, ON · Wheelchair accessible</div>
-      <div><a href="contact.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="contact.html">Terms &amp; Conditions</a></div>
-    </div>
+  <div class="wrap foot">
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg><a class="big" href="tel:+19053315999">905.331.5999</a><div class="sm">Call Us</div></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="big" style="font-size:13px">1234 Elm Street</div><div class="sm">Burlington, ON</div><a class="lnk" href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">Directions</a></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="sm" style="font-weight:700;color:var(--ink)">Mon – Fri: 10–7<br>Sat: 10–5 | Sun: Closed</div><div class="sm">Hours</div></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><div class="big" style="font-size:13px">Book Your Exam<br>Online</div><a class="lnk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book Now</a></div>
   </div>
 </footer>
 
-<div class="sticky-bar">
+<!-- STICKY BAR -->
+<div class="sticky">
   <a class="call" href="tel:+19053315999"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg>Call Us</a>
-  <a class="bk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book an Exam</a>
+  <a class="book" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Book an Eye Exam</a>
 </div>
 
 <script src="script.js"></script>
