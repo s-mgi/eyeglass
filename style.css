@@ -94,7 +94,7 @@ body.menu-open .menu .menu-foot{opacity:1;transition-delay:.5s}
 .marquee{display:flex;align-items:center;gap:clamp(40px,5vw,72px);width:max-content;animation:marquee 34s linear infinite}
 .marquee-wrap:hover .marquee{animation-play-state:paused}
 .marquee a{flex:none}
-.marquee img{height:58px;width:auto;opacity:.82;transition:.25s}
+.marquee img{height:74px;width:auto;opacity:.82;transition:.25s}
 .marquee a:hover img{opacity:1}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.marquee{animation:none}}
