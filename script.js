@@ -56,10 +56,72 @@ function toggleLens(btn){
   show(0); start();
 })();
 
-// ===== Simple form handlers =====
+// ===== Simple demo form handlers (booking band, etc.) =====
 document.querySelectorAll('form[data-fake]').forEach(function(f){
   f.addEventListener('submit',function(e){
     e.preventDefault(); f.reset();
     alert(f.getAttribute('data-msg')||"Thanks! We'll be in touch soon.");
   });
 });
+
+// ===== Contact form -> HubSpot (via /api/contact) =====
+(function(){
+  var form=document.getElementById('contactForm');
+  if(!form) return;
+  var btn=form.querySelector('button[type="submit"]');
+  var status=form.querySelector('.form-status');
+  var btnHTML=btn?btn.innerHTML:'';
+
+  function show(msg,ok){
+    if(!status) return;
+    status.textContent=msg;
+    status.hidden=false;
+    status.classList.remove('is-ok','is-err');
+    status.classList.add(ok?'is-ok':'is-err');
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+
+    // Basic front-end validation (backend validates too).
+    if(!form.checkValidity()){
+      show('Please fill in your name, email and message.',false);
+      form.reportValidity && form.reportValidity();
+      return;
+    }
+
+    var payload={
+      fullname:(form.fullname&&form.fullname.value||'').trim(),
+      email:(form.email&&form.email.value||'').trim(),
+      phone:(form.phone&&form.phone.value||'').trim(),
+      message:(form.message&&form.message.value||'').trim()
+    };
+
+    if(btn){btn.disabled=true;btn.innerHTML='Sending…';}
+    show('Sending your message…',true);
+
+    fetch('/api/contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    })
+    .then(function(res){
+      return res.json().catch(function(){return {ok:false,error:'Unexpected server response.'};})
+        .then(function(body){return {ok:res.ok&&body.ok,body:body};});
+    })
+    .then(function(r){
+      if(r.ok){
+        show(r.body.message||"Thanks! Your message has been sent.",true);
+        form.reset();
+      }else{
+        show((r.body&&r.body.error)||"Sorry, something went wrong. Please call us at 905.331.5999.",false);
+      }
+    })
+    .catch(function(){
+      show("Network error. Please check your connection, or call us at 905.331.5999.",false);
+    })
+    .finally(function(){
+      if(btn){btn.disabled=false;btn.innerHTML=btnHTML;}
+    });
+  });
+})();

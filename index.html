@@ -9,15 +9,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+  <!-- ===== ANALYTICS (replace placeholder IDs before deploy; see SETUP-ANALYTICS.md) ===== -->
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
+  <!-- Google Analytics 4 (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACEME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-REPLACEME');
+  </script>
+  <!-- HubSpot tracking code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/REPLACE_WITH_HUBSPOT_PORTAL_ID.js"></script>
+  <!-- ===== END ANALYTICS ===== -->
 </head>
 <body>
 
 <!-- MENU OVERLAY -->
 <nav class="menu">
   <a href="index.html">Home</a>
+  <a href="eyecare.html">Eye Exams</a>
   <a href="brands.html">Eyewear Brands</a>
-  <a href="optometrist.html">Optometrist</a>
-  <a href="eyecare.html">Eye Care</a>
+  <a href="contact-lenses.html">Contact Lenses</a>
+  <a href="shamir-lenses.html">Lenses</a>
+  <a href="optometrist.html">Doctor</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
   <div class="menu-foot">
@@ -31,8 +47,22 @@
 <header>
   <div class="wrap nav">
     <a href="index.html" class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></a>
+    <nav class="primary-nav">
+      <a href="eyecare.html">Eye Exams</a>
+      <div class="nav-item">
+        <a href="brands.html">Eyewear <span class="caret">▾</span></a>
+        <div class="dropdown">
+          <a href="brands.html">Eyewear Brands</a>
+          <a href="contact-lenses.html">Contact Lenses</a>
+        </div>
+      </div>
+      <a href="shamir-lenses.html">Lenses</a>
+      <a href="optometrist.html">Doctor</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <div class="nav-right">
-      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark" style="padding:14px 24px">Book an Eye Exam</a>
+      <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark" style="padding:14px 24px">Book Appointment</a>
       <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -65,6 +95,19 @@
   <div class="badge d1" data-reveal><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg><span>Direct Insurance<br>Billing</span></div>
   <div class="badge d2" data-reveal><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1-3.5 4-3.5"/></svg><span>Family Owned<br>Since 30+ Years</span></div>
   <div class="badge d3" data-reveal><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.4"/></svg><span>Advanced<br>Technology</span></div>
+</section>
+
+<!-- WELCOME -->
+<section class="pad">
+  <div class="wrap welcome">
+    <div class="welcome-img" data-reveal><img src="assets/storefront.jpg" alt="Eyeglass Gallery storefront in Burlington at sunset"></div>
+    <div class="welcome-copy">
+      <span class="eyebrow" data-reveal>Welcome to Eyeglass Gallery</span>
+      <h2 data-reveal class="d1">Burlington's Destination for Eye Care &amp; Designer Eyewear</h2>
+      <p data-reveal class="d2">For over 30 years, Eyeglass Gallery has been helping Burlington families see clearly and look their best. We combine comprehensive eye care with a curated selection of designer frames and advanced lens technology.</p>
+      <p data-reveal class="d3">Whether you're here for an eye exam, new glasses, or specialty lenses, we're committed to providing a personalized experience from start to finish.</p>
+    </div>
+  </div>
 </section>
 
 <!-- BRANDS -->
@@ -109,13 +152,25 @@
 </section>
 
 <!-- EXAM FEATURE -->
-<section class="exam" id="book">
+<section class="exam3" id="book">
   <div class="exam-img"><img src="assets/photo5.jpg" alt="Patient during a comprehensive eye exam"></div>
   <div class="exam-copy">
     <span class="eyebrow" data-reveal>Eye Exams</span>
-    <h3 class="serif" data-reveal>Your Vision<br>Our Priority</h3>
+    <h3 data-reveal>Your Vision<br>Our Priority</h3>
     <p data-reveal class="d1">Comprehensive eye exams using advanced technology to ensure your eyes stay healthy.</p>
     <a href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener" class="btn btn-dark d2" data-reveal>Book Your Exam <span class="arw">→</span></a>
+  </div>
+  <div class="exam-care" data-reveal>
+    <span class="eyebrow">We care for your eyes</span>
+    <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Comprehensive Eye Exams</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Digital Retinal Imaging</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Glaucoma Screening</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Cataract Monitoring</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Children's Eye Exams</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Contact Lens Fittings</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Diabetic Eye Care</li>
+    </ul>
   </div>
 </section>
 
@@ -131,11 +186,23 @@
   </div>
 </section>
 
-<!-- LENS TECH -->
+<!-- LENS TECH + SHAMIR -->
 <section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="lens" data-reveal>
-      <div class="lens-head"><h3>Lens Technology</h3><a href="eyecare.html">View All Lenses</a></div>
+  <div class="wrap lens-tech">
+    <div class="lt-info" data-reveal>
+      <h3>Lens Technology</h3>
+      <p>See every detail with premium lens technology. We proudly fit lenses from <strong>Shamir</strong>, <strong>Hoya</strong> and <strong>Nikon</strong>, designed to provide exceptional clarity, comfort, and protection for today's digital lifestyle.</p>
+      <div class="lens-showcase">
+        <div class="lens-brands">
+          <span>SHAMIR</span>
+          <span>HOYA</span>
+          <span>NIKON</span>
+        </div>
+        <img class="lens-photo" src="assets/shamir-lens.png" alt="Premium lens">
+      </div>
+    </div>
+    <div class="lens d1" data-reveal>
+      <div class="lens-head" style="justify-content:flex-end"><a href="shamir-lenses.html">View All Lenses</a></div>
       <div class="lens-item">
         <button class="lens-row" onclick="toggleLens(this)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Blue Light Protection</span><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <div class="lens-a"><p>Filters high-energy blue light from screens to reduce digital eye strain and support healthier sleep.</p></div>
@@ -185,7 +252,7 @@
 <footer>
   <div class="wrap foot">
     <div class="fi"><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z"/></svg><a class="big" href="tel:+19053315999">905.331.5999</a><div class="sm">Call Us</div></div>
-    <div class="fi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="big" style="font-size:13px">1234 Elm Street</div><div class="sm">Burlington, ON</div><a class="lnk" href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">Directions</a></div>
+    <div class="fi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="big" style="font-size:13px">1250 Brant Street</div><div class="sm">Burlington, ON L7P 1X8</div><a class="lnk" href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">Directions</a></div>
     <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="sm" style="font-weight:700;color:var(--ink)">Mon – Fri: 10–7<br>Sat: 10–5 | Sun: Closed</div><div class="sm">Hours</div></div>
     <div class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><div class="big" style="font-size:13px">Book Your Exam<br>Online</div><a class="lnk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book Now</a></div>
   </div>
