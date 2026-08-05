@@ -266,6 +266,14 @@ body.menu-open .menu .menu-foot{opacity:1;transition-delay:.5s}
 .map-embed{margin-top:20px;border:1px solid var(--line);overflow:hidden}
 .map-embed iframe{width:100%;height:280px;border:0;display:block}
 
+/* ===== Order form ===== */
+.order-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--panel);border:1px solid var(--line);padding:clamp(22px,3vw,34px);border-radius:3px}
+.order-form input,.order-form select,.order-form textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);background:var(--paper);font-family:var(--sans);font-size:14px;color:var(--ink)}
+.order-form textarea{min-height:96px;resize:vertical}
+.order-form .full{grid-column:1/-1}
+.order-form .btn{grid-column:1/-1;justify-content:center;margin-top:4px}
+@media(max-width:640px){.order-form{grid-template-columns:1fr}}
+
 /* ===== Book band ===== */
 .book-band{background:var(--ink);color:var(--paper);text-align:center;padding:clamp(36px,5vw,62px)}
 .book-band .eyebrow{color:var(--tan)}
@@ -288,6 +296,14 @@ footer{margin-top:auto;border-top:1px solid var(--line);background:var(--paper);
 .foot .fi .sm{font-size:12.5px;color:var(--ink-soft);line-height:1.5}
 .foot .fi .lnk{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid var(--ink);padding-bottom:1px;transition:.2s}
 .foot .fi .lnk:hover{color:var(--ink-soft)}
+
+.foot-social{display:flex;gap:14px;justify-content:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.foot-social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:.2s}
+.foot-social a:hover{background:var(--red);border-color:var(--red);color:#fff}
+.foot-social svg{width:17px;height:17px}
+.foot-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:20px;font-size:12px;color:var(--ink-soft)}
+.foot-legal a{color:var(--ink-soft)}
+.foot-legal a:hover{color:var(--ink)}
 
 /* ===== Sticky bar ===== */
 .sticky{position:fixed;bottom:0;left:0;right:0;z-index:70;display:grid;grid-template-columns:1fr 1fr}
@@ -326,3 +342,91 @@ footer{margin-top:auto;border-top:1px solid var(--line);background:var(--paper);
   .team{grid-template-columns:repeat(2,1fr)}
   .hero-cta .btn{min-width:0;width:100%}
 }
+
+/* ============================================================
+   ELEVATION LAYER — cohesive, custom, premium polish
+   (appended last so it refines the base styles above)
+   ============================================================ */
+:root{
+  --r:5px; --r-lg:12px;
+  --shadow-sm:0 3px 10px -5px rgba(26,23,18,.20);
+  --shadow:0 30px 60px -34px rgba(26,23,18,.50);
+}
+::selection{background:rgba(216,30,44,.15);color:var(--ink)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+html{-webkit-text-size-adjust:100%}
+body{letter-spacing:.005em}
+
+/* Tighter, more editorial display type */
+h1,.hero-copy h1,.page-hero h1{letter-spacing:-.03em;line-height:1.02}
+h2,.split-copy h2,.exam3 .exam-copy h3,.exam-copy h3,.book-band h2,.welcome-copy h2{letter-spacing:-.02em}
+.prose h2{letter-spacing:-.015em}
+
+/* Signature eyebrow: small red accent tick before the label */
+.eyebrow{font-size:11px;letter-spacing:.3em;font-weight:700;color:var(--ink-soft)}
+.eyebrow::before{content:"";display:inline-block;width:22px;height:1.5px;background:var(--red);vertical-align:middle;margin:-2px 12px 0 0}
+.book-band .eyebrow::before{background:var(--tan)}
+
+/* Section labels get a refined centered accent rule */
+.sec-title{letter-spacing:.2em;font-size:14px}
+.sec-title::after{content:"";display:block;width:34px;height:2px;background:var(--red);margin:16px auto 0;border-radius:2px}
+.sec-head h2{letter-spacing:.18em}
+
+/* Premium cards: warm off-white, rounded, hairline, hover lift + accent bar */
+.info-grid{gap:22px}
+.info-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+.info-card{background:#FBF9F5;border:1px solid var(--line);border-radius:var(--r-lg);padding:38px 32px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.info-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(26,23,18,.05)}
+.info-card:hover::before{transform:scaleX(1)}
+.info-card .num{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--red);margin-bottom:16px}
+.info-card h4{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+.info-card p{font-size:14.5px;line-height:1.66;color:var(--ink-soft)}
+
+/* Buttons: softened corners, tighter tracking, subtle depth on solid */
+.btn{border-radius:var(--r);letter-spacing:.1em}
+.btn-dark{box-shadow:0 10px 24px -16px rgba(26,23,18,.6)}
+.btn-red{box-shadow:0 10px 24px -14px rgba(176,18,30,.6)}
+
+/* Rounded, consistent imagery + soft depth */
+.welcome-img img,.split-img,.exam-img,.exam3 .exam-img,.col-card,.brand-tile,.map-embed,.contact-form,.order-form,.lens{border-radius:var(--r-lg)}
+.welcome-img img{box-shadow:var(--shadow)}
+.col-card{box-shadow:var(--shadow-sm)}
+
+/* Team portraits: refined ring + soft shadow */
+.member .ph{box-shadow:var(--shadow-sm);border-color:rgba(26,23,18,.10)}
+
+/* Badges: a touch more air, hairline icons */
+.badge{padding:42px 18px;gap:16px}
+.badge svg{stroke-width:1.3}
+
+/* Book band: full-bleed, add quiet depth + top vignette */
+.book-band{position:relative;overflow:hidden}
+.book-band::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 130% at 50% -25%,rgba(216,30,44,.16),transparent 58%);pointer-events:none}
+.book-band > *{position:relative;z-index:1}
+
+/* Lens-technology card refinement */
+.lens-tech{box-shadow:var(--shadow-sm)}
+
+/* Dropdown: softer, more premium */
+.dropdown{border-radius:var(--r-lg);box-shadow:0 26px 46px -26px rgba(26,23,18,.5);overflow:hidden;border-color:rgba(26,23,18,.08)}
+.dropdown a{transition:.18s}
+
+/* Page hero: refined crumb + hairline base */
+.page-hero{border-bottom:1px solid var(--line)}
+.page-hero .crumb{letter-spacing:.22em}
+
+/* Footer: a touch more refined */
+.foot-social a{box-shadow:var(--shadow-sm)}
+
+@media(max-width:900px){
+  .info-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .info-grid.cols-4{grid-template-columns:1fr}
+  .info-card{padding:30px 26px}
+}
+
+/* ===== Client preference: no rounded corners ===== */
+:root{--r:0;--r-lg:0}
+.lens-tech,.form-status{border-radius:0}

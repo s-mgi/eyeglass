@@ -28,10 +28,13 @@
 
 <nav class="menu">
   <a href="index.html">Home</a>
-  <a href="eyecare.html">Eye Exams</a>
   <a href="brands.html">Eyewear Brands</a>
   <a href="contact-lenses.html">Contact Lenses</a>
   <a href="shamir-lenses.html">Lenses</a>
+  <a href="eyecare.html">Eye Exams</a>
+  <a href="specialty-eyecare.html">Specialty Eyecare</a>
+  <a href="our-technology.html">Our Technology</a>
+  <a href="direct-billing.html">Direct Billing</a>
   <a href="optometrist.html">Doctor</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
@@ -41,15 +44,23 @@
   <div class="wrap nav">
     <a href="index.html" class="logo"><img src="assets/logo.png" alt="Eyeglass Gallery"></a>
     <nav class="primary-nav">
-      <a href="eyecare.html">Eye Exams</a>
       <div class="nav-item">
         <a href="brands.html">Eyewear <span class="caret">▾</span></a>
         <div class="dropdown">
           <a href="brands.html">Eyewear Brands</a>
           <a href="contact-lenses.html">Contact Lenses</a>
+          <a href="shamir-lenses.html">Lenses</a>
         </div>
       </div>
-      <a href="shamir-lenses.html">Lenses</a>
+      <div class="nav-item">
+        <a href="eyecare.html">Eye Care <span class="caret">▾</span></a>
+        <div class="dropdown">
+          <a href="eyecare.html">Eye Exams</a>
+          <a href="specialty-eyecare.html">Specialty Eyecare</a>
+          <a href="our-technology.html">Our Technology</a>
+          <a href="direct-billing.html">Direct Billing</a>
+        </div>
+      </div>
       <a href="optometrist.html">Doctor</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -99,6 +110,28 @@
   </div>
 </section>
 
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><h2>Order Contacts Online</h2></div>
+    <p data-reveal style="color:var(--ink-soft);max-width:640px;margin-bottom:24px">Order your contact lenses from the comfort of home. Fill out the form and we'll get them ready. To protect your information we don't take payment online, once you submit we'll call to confirm shipping and process your payment.</p>
+    <form class="order-form" data-reveal data-fake data-msg="Thanks! We'll call you shortly to confirm your order and process payment before shipping.">
+      <input type="text" name="firstname" placeholder="First name" required>
+      <input type="text" name="lastname" placeholder="Last name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone number" required>
+      <select name="supply" aria-label="Supply duration"><option value="">Supply duration</option><option>3 months</option><option>6 months</option><option>1 year</option></select>
+      <input type="text" name="brand" placeholder="Preferred brand">
+      <textarea class="full" name="message" placeholder="Message &amp; prescription details"></textarea>
+      <input class="full" type="text" name="address" placeholder="Street address">
+      <input type="text" name="unit" placeholder="Unit / suite (optional)">
+      <input type="text" name="city" placeholder="City">
+      <input type="text" name="province" placeholder="Province">
+      <input type="text" name="postal" placeholder="Postal code">
+      <button type="submit" class="btn btn-dark full">Submit Order <span class="arw">→</span></button>
+    </form>
+  </div>
+</section>
+
 <section class="book-band">
   <span class="eyebrow" data-reveal>Running low?</span>
   <h2 data-reveal class="d1">Reorder your contacts</h2>
@@ -112,6 +145,14 @@
     <div class="fi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 00-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="big" style="font-size:13px">1250 Brant Street</div><div class="sm">Burlington, ON L7P 1X8</div><a class="lnk" href="https://goo.gl/maps/CnNb46fwSN9y2vAJ9" target="_blank" rel="noopener">Directions</a></div>
     <div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="sm" style="font-weight:700;color:var(--ink)">Mon – Fri: 10–7<br>Sat: 10–5 | Sun: Closed</div><div class="sm">Hours</div></div>
     <div class="fi"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><div class="big" style="font-size:13px">Book Your Exam<br>Online</div><a class="lnk" href="https://eyeglassgallery.simplybook.me/v2/" target="_blank" rel="noopener">Book Now</a></div>
+  </div>
+  <div class="wrap foot-social">
+    <a href="https://www.instagram.com/eyeglass_gallery/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.6" cy="7.4" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://www.facebook.com/Eyeglass-Gallery-963481793702664" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M13.5 21v-7h2.3l.4-2.7h-2.7V9.6c0-.8.2-1.3 1.3-1.3h1.4V5.9c-.2 0-1.1-.1-2.1-.1-2 0-3.4 1.2-3.4 3.5v1.9H8.3V14h2.4v7h2.8z"/></svg></a>
+  </div>
+  <div class="wrap foot-legal">
+    <span>© 2026 Eyeglass Gallery · 2 for 1 Optical · Burlington, ON</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-conditions.html">Terms &amp; Conditions</a></span>
   </div>
 </footer>
 <div class="sticky">
