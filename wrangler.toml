@@ -1,0 +1,19 @@
+name = "eyeglass-gallery"
+main = "src/worker.js"
+compatibility_date = "2026-10-21"
+# Keep plain-text variables the user sets in the Cloudflare dashboard when
+# Workers Builds redeploys from GitHub.
+keep_vars = true
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+# Pages are rendered by the Worker (CMS content), so it runs first for every
+# path except the static files below, which are served straight from disk.
+html_handling = "none"
+run_worker_first = ["/*", "!/assets/*", "!/style.css", "!/script.js", "!/js/*", "!/favicon.ico", "!/apple-touch-icon.png"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "eyeglassgallery"
+database_id = "7f99f051-c3ce-4ad9-98c5-d3378e827e4a"
