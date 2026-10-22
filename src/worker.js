@@ -1,0 +1,186 @@
+import { getUser, checkLogin, createSessionCookie, clearSessionCookie, unauthorized } from './lib/auth.js';
+import { renderPage, renderNotFound, pageForPath, pageDefaults, REDIRECTS, renderRobots, renderSitemap } from './lib/render.js';
+import { handleRegister } from './lib/register.js';
+import { listInquiries, createInquiry, importContacts, importRegistrations, patchInquiry, deleteInquiry, listContent, putContent, listEditLog, seoCheck, perfCheck, serveMedia } from './lib/api.js';
+import { analyticsReport, eblastReport } from './lib/analytics.js';
+import { eblastState, saveDraft, sendCampaign, handleUnsubscribe, getCampaign, deleteCampaign, duplicateCampaign, previewEblast, exportEblast, testEblast, uploadEblastImage, serveEblastImage, listRecipients } from './lib/eblast.js';
+import { logError, handleClientError, listErrors, patchError, resolveAllErrors } from './lib/errors.js';
+import { me, updateMe, listUsers, createUser, patchUser, deleteUser, changeOwnPassword, getAdminSettings, putPermissions, putFeatures, putTags, putLogSettings } from './lib/manage.js';
+import { getFeatures, getSettings, userPermissions } from './lib/settings.js';
+import { requestReset, confirmReset } from './lib/reset.js';
+import { getAutoReplySettings, putAutoReplySettings, previewAutoReply, testAutoReply } from './lib/autoreply.js';
+
+const SEO_KEYS = /^(seo_|canonical_url$|og_|favicon_href$|perf_)/;
+
+function permissionFor(path, method) {
+  if (/^\/api\/users(\/|$)/.test(path)) return ['users'];
+  if (path === '/api/settings' && method === 'GET') return ['users', 'features', 'tags', 'notifications'];
+  if (path === '/api/settings/features') return ['features'];
+  if (path === '/api/settings/tags') return ['tags'];
+  if (path === '/api/settings/logs') return ['notifications'];
+  if (/^\/api\/logs(\/|$)/.test(path)) return ['logs'];
+  if (path.startsWith('/api/eblast/')) return ['eblast'];
+  if (path === '/api/inquiries/import-registrations') return ['registrations'];
+  if (path === '/api/inquiries/import') return ['contacts'];
+  if (/^\/api\/inquiries(\/|$)/.test(path)) return ['registrations', 'contacts'];
+  if (/^\/api\/autoreply(\/|$)/.test(path)) return ['registrations'];
+  if (path === '/api/seo-check' || path === '/api/perf-check' || path === '/api/analytics' || path === '/api/analytics/eblasts') return ['seo'];
+  const content = path.match(/^\/api\/content\/([^/]+)$/);
+  if (content && method === 'PUT') {
+    const key = decodeURIComponent(content[1]).replace(/^draft__/, '');
+    if (key.startsWith('gallery_')) return ['gallery'];
+    if (SEO_KEYS.test(key)) return ['seo'];
+    return ['edit'];
+  }
+  return null;
+}
+
+function featureFor(path, method) {
+  if (path.startsWith('/api/eblast/')) return ['eblast'];
+  if (path === '/api/seo-check' || path === '/api/perf-check' || path === '/api/analytics' || path === '/api/analytics/eblasts') return ['seo'];
+  if (path === '/api/inquiries/import-registrations') return ['registrations'];
+  if (path === '/api/inquiries/import' || (path === '/api/inquiries' && method === 'POST')) return ['contacts'];
+  if (/^\/api\/inquiries\/[^/]+$/.test(path)) return ['registrations', 'contacts'];
+  if (path.startsWith('/api/content/gallery_upload') || path.startsWith('/api/content/gallery_')) return ['gallery'];
+  return null;
+}
+
+export default {
+  async fetch(request, env, ctx) {
+    try {
+      return await route(request, env, ctx);
+    } catch (err) {
+      const path = new URL(request.url).pathname;
+      console.error('Unhandled Worker error:', err);
+      await logError(env, { area: 'site', message: `Unexpected error on ${request.method} ${path}`, detail: err, path });
+      if (path.startsWith('/api/') || request.method !== 'GET') return json({ ok: false, error: 'Something went wrong on the server. It has been recorded in Logs.' }, 500);
+      return new Response('Something went wrong loading this page. Please try again in a moment.', { status: 500, headers: { 'Content-Type': 'text/plain; charset=UTF-8' } });
+    }
+  },
+};
+
+async function route(request, env, ctx) {
+  const url = new URL(request.url);
+  const path = url.pathname;
+  const method = request.method;
+
+  if (path === '/api/login' && method === 'POST') {
+    const result = await checkLogin(request, env);
+    if (!result.ok) return json({ ok: false, error: result.error }, 401);
+    return json({ ok: true }, 200, { 'Set-Cookie': await createSessionCookie(env, result.user) });
+  }
+  if (path === '/api/password-reset' && method === 'POST') return requestReset(request, env);
+  if (path === '/api/password-reset/confirm' && method === 'POST') return confirmReset(request, env);
+  if (path === '/api/logout' && method === 'POST') {
+    return json({ ok: true }, 200, { 'Set-Cookie': clearSessionCookie() });
+  }
+
+  if (path === '/api/unsubscribe' && (method === 'GET' || method === 'POST')) return handleUnsubscribe(request, env);
+  if (path === '/log-error' && method === 'POST') return handleClientError(request, env);
+
+  if (path === '/robots.txt' && method === 'GET') return renderRobots(env);
+  if (path === '/sitemap.xml' && method === 'GET') return renderSitemap(env);
+  if ((method === 'GET' || method === 'HEAD') && REDIRECTS[path]) return Response.redirect(url.origin + REDIRECTS[path], 301);
+  const page = (method === 'GET' || method === 'HEAD') ? pageForPath(path) : null;
+  if (page) return renderPage(request, env, page);
+  if (path === '/register' && method === 'POST') return handleRegister(request, env, ctx);
+
+  const mediaMatch = path.match(/^\/media\/([^/]+)$/);
+  if (mediaMatch && method === 'GET') return serveMedia(env, decodeURIComponent(mediaMatch[1]));
+  const eblastImageMatch = path.match(/^\/i\/(e\/\d+\/[a-f0-9]+\.(?:jpg|png|gif))$/);
+  if (eblastImageMatch && method === 'GET') return serveEblastImage(request, env, ctx, eblastImageMatch[1]);
+
+  if (path === '/admin' || path === '/admin.html' || path.startsWith('/api/')) {
+    if (!env.ADMIN_USER || !env.ADMIN_PASSWORD) return unauthorized('Admin auth is not configured (ADMIN_USER / ADMIN_PASSWORD missing).');
+    const user = await getUser(request, env);
+    if (!user) {
+      if (path.startsWith('/api/')) return unauthorized();
+      return Response.redirect(`${url.origin}/login.html?next=${encodeURIComponent(path)}`, 302);
+    }
+    if (path.startsWith('/api/')) return api(request, { ...env, CURRENT_USER: user }, ctx, user, path, method);
+  }
+
+  const alias = { '/admin': '/admin.html', '/login': '/login.html' }[path];
+  const asset = await env.ASSETS.fetch(alias ? new Request(new URL(alias, url), request) : request);
+  if (asset.status === 404 && method === 'GET') return renderNotFound(request, env);
+  return asset;
+}
+
+async function api(request, env, ctx, user, path, method) {
+  const perm = permissionFor(path, method);
+  if (perm) {
+    const allowed = userPermissions(user, await getSettings(env));
+    if (!perm.some((p) => allowed[p])) return unauthorized("Your role doesn't allow this. An admin can change it in Manage > Roles.", 403);
+  }
+  const needs = featureFor(path, method);
+  if (needs) {
+    const features = await getFeatures(env);
+    if (!needs.some((f) => features[f])) return unauthorized('This feature is turned off in Manage.', 403);
+  }
+
+  if (path === '/api/me' && method === 'GET') return me(env, user);
+  if (path === '/api/me' && method === 'PATCH') return updateMe(request, env, user);
+  if (path === '/api/me/password' && method === 'POST') return changeOwnPassword(request, env, user);
+
+  if (path === '/api/users' && method === 'GET') return listUsers(env);
+  if (path === '/api/users' && method === 'POST') return createUser(request, env, user);
+  const userMatch = path.match(/^\/api\/users\/(\d+)$/);
+  if (userMatch && method === 'PATCH') return patchUser(request, env, user, Number(userMatch[1]));
+  if (userMatch && method === 'DELETE') return deleteUser(env, user, Number(userMatch[1]));
+
+  if (path === '/api/settings' && method === 'GET') return getAdminSettings(env);
+  if (path === '/api/settings/permissions' && method === 'PUT') return putPermissions(request, env, user);
+  if (path === '/api/settings/features' && method === 'PUT') return putFeatures(request, env, user);
+  if (path === '/api/settings/tags' && method === 'PUT') return putTags(request, env, user);
+  if (path === '/api/settings/logs' && method === 'PUT') return putLogSettings(request, env, user);
+
+  if (path === '/api/logs' && method === 'GET') return listErrors(request, env);
+  if (path === '/api/logs/resolve-all' && method === 'POST') return resolveAllErrors(env);
+  const logMatch = path.match(/^\/api\/logs\/(\d+)$/);
+  if (logMatch && method === 'PATCH') return patchError(request, env, Number(logMatch[1]));
+
+  if (path === '/api/inquiries' && method === 'GET') return listInquiries(request, env);
+  if (path === '/api/inquiries' && method === 'POST') return createInquiry(request, env);
+  if (path === '/api/inquiries/import' && method === 'POST') return importContacts(request, env);
+  if (path === '/api/inquiries/import-registrations' && method === 'POST') return importRegistrations(request, env);
+  const inquiryMatch = path.match(/^\/api\/inquiries\/([^/]+)$/);
+  if (inquiryMatch && method === 'PATCH') return patchInquiry(request, env, inquiryMatch[1]);
+  if (inquiryMatch && method === 'DELETE') return deleteInquiry(request, env, inquiryMatch[1]);
+
+  if (path === '/api/content' && method === 'GET') return listContent(env);
+  if (path === '/api/defaults' && method === 'GET') return json(await pageDefaults(request, env), 200);
+  const contentMatch = path.match(/^\/api\/content\/([^/]+)$/);
+  if (contentMatch && method === 'PUT') return putContent(request, env, decodeURIComponent(contentMatch[1]));
+
+  if (path === '/api/edit-log' && method === 'GET') return listEditLog(request, env);
+  if (path === '/api/seo-check' && method === 'GET') return seoCheck(request, env);
+  if (path === '/api/perf-check' && method === 'GET') return perfCheck(request, env);
+  if (path === '/api/analytics' && method === 'GET') return analyticsReport(request, env, ctx);
+  if (path === '/api/analytics/eblasts' && method === 'GET') return eblastReport(request, env, ctx);
+
+  if (path === '/api/autoreply' && method === 'GET') return getAutoReplySettings(env);
+  if (path === '/api/autoreply' && method === 'PUT') return putAutoReplySettings(request, env);
+  if (path === '/api/autoreply/preview' && method === 'POST') return previewAutoReply(request, env);
+  if (path === '/api/autoreply/test' && method === 'POST') return testAutoReply(request, env);
+
+
+  if (path === '/api/eblast/state' && method === 'GET') return eblastState(env);
+  if (path === '/api/eblast/draft' && method === 'POST') return saveDraft(request, env);
+  if (path === '/api/eblast/send' && method === 'POST') return sendCampaign(request, env);
+  if (path === '/api/eblast/recipients' && method === 'GET') return listRecipients(env);
+  if (path === '/api/eblast/preview' && method === 'POST') return previewEblast(request, env);
+  if (path === '/api/eblast/export' && method === 'POST') return exportEblast(request, env);
+  if (path === '/api/eblast/test' && method === 'POST') return testEblast(request, env);
+  if (path === '/api/eblast/images' && method === 'PUT') return uploadEblastImage(request, env);
+  const eblastCampaignMatch = path.match(/^\/api\/eblast\/campaigns\/([^/]+)$/);
+  if (eblastCampaignMatch && method === 'GET') return getCampaign(env, eblastCampaignMatch[1]);
+  if (eblastCampaignMatch && method === 'DELETE') return deleteCampaign(env, eblastCampaignMatch[1]);
+  const eblastDuplicateMatch = path.match(/^\/api\/eblast\/campaigns\/([^/]+)\/duplicate$/);
+  if (eblastDuplicateMatch && method === 'POST') return duplicateCampaign(env, eblastDuplicateMatch[1]);
+
+  return json({ ok: false, error: 'Not found' }, 404);
+}
+
+function json(obj, status, extraHeaders) {
+  return new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', ...(extraHeaders || {}) } });
+}
